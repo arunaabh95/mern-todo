@@ -10,18 +10,18 @@ import TasksList from "./TaskList";
 const HomePage = () => {
   return (
     <Container style={{ display: "flex", flexDirection: "column", justifyContent: "center" , padding: "2rem"}}>
-      <Paper elevation={3} style={{ padding: "2rem", width: "100%", textAlign: "center"}}>
+      <Paper elevation={3} style={{ padding: "1rem", width: "100%", textAlign: "center"}}>
         <Typography variant="h3" component="h1" gutterBottom>
           Task App
         </Typography>
 
         <AddNewTaskForm />
 
-        <Grid container spacing={2}>
+        <Container>
           <Grid item s={12}>
             <TasksList />
           </Grid>
-        </Grid>
+        </Container>
       </Paper>
     </Container>
   );

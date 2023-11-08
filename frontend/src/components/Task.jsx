@@ -14,39 +14,39 @@ const Task = ({ task, index }) => {
     };
 
     return(
-        <Grid item xs={12} sm={6} md={4} key={index}>
-              <Paper sx={{ p: 2 }}>
-                <Typography variant="h5" color="textPrimary" gutterBottom>
-                  Title:{" "}
-                  <span className={task.completed ? "line-through text-success" : "text-dark"}>
-                    {task.title}
-                  </span>
-                </Typography>
-                <Typography variant="body1" color="textPrimary" paragraph>
-                  Description: {task.description}
-                </Typography>
-                <FormControlLabel
-                  control={<Checkbox checked={task.completed} color="primary" />}
-                  label="Completed"
-                />
-                <ButtonGroup>
-                  <Link to={`edit-task/?id=${task._id}`}>
-                    <Button variant="contained" color="primary" startIcon={<EditIcon />} sx={{ mx: 1 }}>
-                      Edit
-                    </Button>
-                  </Link>
-                  <Button
-                    variant="contained"
-                    color="error"
-                    startIcon={<DeleteIcon />}
-                    onClick={() => handleDeleteTask(task._id)}
-                    sx={{ mx: 1 }}
-                  >
-                    Delete
-                  </Button>
-                </ButtonGroup>
-              </Paper>
-            </Grid>
+<Grid item xs={12} sm={6} md={4} key={index} style={{ display: 'flex', maxWidth:'80%' }}>
+    <Paper sx={{ p: 2 }} style={{ width: '90%', display: 'flex', flexDirection: 'column', margin: '10px' }}>
+      <Typography variant="h5" color="textPrimary" gutterBottom>
+        Title:{" "}
+        <span className={task.completed ? "line-through text-success" : "text-dark"}>
+          {task.title}
+        </span>
+      </Typography>
+      <Typography variant="body1" color="textPrimary" paragraph>
+        Description: {task.description}
+      </Typography>
+      <FormControlLabel
+        control={<Checkbox checked={task.completed} color="primary" />}
+        label="Completed"
+      />
+      <ButtonGroup>
+        <Link to={`edit-task/?id=${task._id}`}>
+          <Button variant="contained" color="primary" startIcon={<EditIcon />} sx={{ mx: 1 }}>
+            Edit
+          </Button>
+        </Link>
+        <Button
+          variant="contained"
+          color="error"
+          startIcon={<DeleteIcon />}
+          onClick={() => handleDeleteTask(task._id)}
+          sx={{ mx: 1 }}
+        >
+          Delete
+        </Button>
+      </ButtonGroup>
+    </Paper>
+  </Grid>
     );
 }; 
 

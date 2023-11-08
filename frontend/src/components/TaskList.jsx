@@ -15,7 +15,7 @@ const TasksList = () => {
  // load the tasks from store and display each of them
   return (
     <Container>
-      <Grid container spacing={2}>
+      <Grid container>
         {isLoading && (
           <Grid item xs={12}>
             <Typography variant="h5" color="primary">
