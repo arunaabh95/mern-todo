@@ -1,7 +1,7 @@
 const Task = require("../models/Task");
 
 // make a controller for handle all requests
-exports.getTasks = async (req, res) => {
+const getTasks = async (req, res) => {
   try {
     const tasks = await Task.find({}).sort({ createdAt: 1 });
 
@@ -19,7 +19,7 @@ exports.getTasks = async (req, res) => {
 };
 
 // make a controller for create a task
-exports.createTask = async (req, res) => {
+const createTask = async (req, res) => {
   try {
     const newTask = new Task(req.body);
     await newTask.save();
@@ -35,7 +35,7 @@ exports.createTask = async (req, res) => {
 };
 
 // make a controller for update a task
-exports.updateTask = async (req, res) => {
+const updateTask = async (req, res) => {
   try {
     const { id: taskId } = req.params;
     const task = await Task.findByIdAndUpdate(taskId, req.body, { new: true, runValidators: true });
@@ -54,7 +54,7 @@ exports.updateTask = async (req, res) => {
 };
 
 // make a controller for delete a task
-exports.deleteTask = async (req, res) => {
+const deleteTask = async (req, res) => {
   try {
     const { id: taskId } = req.params;
     const task = await Task.findByIdAndDelete(taskId);
@@ -71,3 +71,5 @@ exports.deleteTask = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+module.exports = {getTasks, createTask, updateTask, deleteTask};
