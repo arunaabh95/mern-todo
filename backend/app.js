@@ -28,7 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // sets default route
-app.get("/", (req, res) => {
+
+app.get("/healthcheck", (req, res) => {
   res.status(200).json({ message: "Welcome to TASK Node.js application backend." });
 });
 
