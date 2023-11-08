@@ -4,7 +4,7 @@
 1. Install mongoDB from [here](https://www.mongodb.com/docs/manual/administration/install-community/)
 2. Start the mongoDB Compass app
 3. Check the connection string by clicking the 3 dots in top left column and clicking "Copy Connection String" option. It should look like this
-[dbconnect](/backend/public/dbconnect.png)
+![dbconnect](/backend/public/dbconnect.png)
 4. Inside the `.env` file in the backend folder set `MONGO_URI` to the string you copied.
 
 ### Backend
@@ -24,8 +24,8 @@ Here are some sample images of frontend output
 
 1. Homepage
 
-[homepage](/frontend/public/homepage.png)
+![homepage](/frontend/public/homepage.png)
 
 2. Editing A task
 
-[editpage](/frontend/public/editpage.png)
+![editpage](/frontend/public/editpage.png)
