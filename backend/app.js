@@ -17,7 +17,7 @@ const app = express();
 const connectDatabase = require("./src/db");
 connectDatabase();
 
-// corss-origin-allow-all
+// cors-origin-allow-all
 app.use(cors());
 
 
